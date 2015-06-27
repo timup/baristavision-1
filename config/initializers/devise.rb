@@ -241,7 +241,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require 'omniauth-clover'
-  config.omniauth :clover, 'A9Z6YDC9XWS3J', '9f6d5274-e730-001e-1ed6-f78ec2509a6a'
+  config.omniauth :clover, ENV['clover_app_id'], ENV['clover_secret']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

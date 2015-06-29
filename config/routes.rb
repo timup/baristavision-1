@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  get 'orders' => 'home#orders'
+  post 'orders' => 'home#orders'
+
   devise_for :users, controllers: {
         :omniauth_callbacks => "users/omniauth_callbacks"
       }

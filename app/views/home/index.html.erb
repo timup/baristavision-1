@@ -6,8 +6,10 @@
 <p>Your access token is <%= current_user.access_token %></p>
 <p>Your merchant_id is <%= current_user.merchant_id %></p>
 <ul>
-  <li><%= @clover.items %></li>
+  <li><%= @item_names %></li>
 </ul>
+
+Go to <%= link_to 'Orders', orders_path %>
 
 <!-- <ul>
   <li><%= @response %></li>

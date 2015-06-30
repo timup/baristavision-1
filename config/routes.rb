@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tablets
   root 'home#index'
 
   get 'orders' => 'home#orders'

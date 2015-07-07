@@ -1,13 +1,12 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '24cbf1e23006ea68a2dc799217510bf63bd43366b4c334a66751876a16b2e5bb1a35fd033395699d17b92bfa005d08bf1e01435918efe9d48632ca386bb562f4'
+  config.secret_key = '8dc916ec85db4335b16ddfe7ad038a19797f3344947a8cc26a0c17367cea01f00f36c57e576e9d67da1313e15a1d8169c7826eae206eed25a8aae030a63c3fbc'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -100,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '9b751ae9d04b8bfd36c520f46d4eca889cb8822477f3db63c7cb737a3c4fbd501911875ae3c8978b407726a7f951ec20691c310e82852ea354000bc6120aab3b'
+  # config.pepper = 'cf72a9936ea8e72550525c192317e1c9957c17fa1115c1a72e100abc2455d37cb45127bac3754734de386f6f97aa30ebd4f55109f0eb13f86f3ef7e7e6b72896'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -242,7 +241,7 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require 'omniauth-clover'
   config.omniauth :clover, ENV['clover_app_id'], ENV['clover_secret']
-
+  
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

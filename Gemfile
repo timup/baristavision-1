@@ -1,61 +1,64 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-ruby "2.2.1"
+ruby "2.2.2"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem "airbrake"
+gem "autoprefixer-rails"
+gem "bootstrap-sass", "~> 3.3.5"
+gem "bourbon", "~> 4.2.0"
+gem "coffee-rails", "~> 4.1.0"
+gem "delayed_job_active_record"
+gem "devise"
+gem "email_validator"
+gem "figaro"
+gem "flutie"
+gem "high_voltage"
+gem "httparty"
+gem "i18n-tasks"
+gem "jquery-rails"
+gem "neat", "~> 1.7.0"
+gem "newrelic_rpm", ">= 3.9.8"
+gem "normalize-rails", "~> 3.0.0"
+gem "omniauth-clover"
+gem "pg"
+gem "rack-canonical-host"
+gem "rails", "4.2.1"
+gem "recipient_interceptor"
+gem "refills"
+gem "sass-rails", "~> 5.0"
+gem "simple_form"
+gem "title"
+gem "uglifier"
+gem "unicorn"
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem 'puma'
-
-gem 'devise'
-
-gem 'omniauth-clover'
-
-gem 'httparty'
-
-gem 'figaro'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-
-  gem 'sqlite3'
+group :development do
+  gem "spring"
+  gem "spring-commands-rspec"
+  gem "web-console"
 end
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+group :development, :test do
+  gem "awesome_print"
+  gem "bundler-audit", require: false
+  gem "byebug"
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "pry-rails"
+  gem "rspec-rails", "~> 3.1.0"
+end
+
+group :test do
+  gem "capybara-webkit", ">= 1.2.0"
+  gem "database_cleaner"
+  gem "formulaic"
+  gem "launchy"
+  gem "shoulda-matchers", require: false
+  gem "simplecov", require: false
+  gem "timecop"
+  gem "webmock"
+end
+
+group :staging, :production do
+  gem "rails_stdout_logging"
+  gem "rack-timeout"
 end

@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -14,6 +13,14 @@
   <strong>User:</strong>
   <%= @tablet.user %>
 </p>
+
+<p>
+  <strong>Orders:</strong>
+  <% @current_orders.each do |order| %>
+    <p><%= order %></p>
+    <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_tablet_path(@tablet) %> |
 <%= link_to 'Back', tablets_path %>

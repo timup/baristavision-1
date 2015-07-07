@@ -1,14 +1,15 @@
 class TabletsController < ApplicationController
   before_action :set_tablet, only: [:show, :edit, :update, :destroy]
-  before_action :set_clover, only: [:new, :create, :edit, :update]
+  before_action :set_clover, only: [:show, :new, :create, :edit, :update]
 
   # GET /tablets
   def index
-    @tablets = Tablet.all
+    @tablets = Tablet.where(merchant_id: current_user.merchant_id)
   end
 
   # GET /tablets/1
   def show
+    @current_orders = @clover.orders['elements']
   end
 
   # GET /tablets/new

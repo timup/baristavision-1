@@ -9,21 +9,32 @@
     </div>
   </h1>
 </div>
-<p id="notice"><%= notice %></p>
 <div class="row">
-  <% @tablets.each do |tablet| %>
-    <li>
-      <%= link_to tablet_path(tablet) do %>
-        <div class="">
-          <%= tablet.name %>
-        </div>
+  <div class="col-md-6">
+    <ul class="list-group">
+      <% @tablets.each do |tablet| %>
+        <li class="list-group-item">
+          <%= link_to tablet_path(tablet) do %>
+            <div class="">
+              <h3><%= tablet.name %></h3>
+            </div>
+          <% end %>
+          <p>Created by: <%= tablet.user.email %></p>
+          <p>Items</p>
+          <ul>
+            <% tablet.items.each do |item| %>
+              <li><%= item %></li>
+            <% end %>
+          </ul>
+        </li>
       <% end %>
-    </li>
-  <% end %>
+    </ul>
+  </div>
 </div>
 
 
 
+<h3>ignore, for reference only:</h3>
 
 
 <h1>Listing Tablets</h1>

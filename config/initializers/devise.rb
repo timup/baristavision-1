@@ -6,7 +6,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  config.secret_key = '8dc916ec85db4335b16ddfe7ad038a19797f3344947a8cc26a0c17367cea01f00f36c57e576e9d67da1313e15a1d8169c7826eae206eed25a8aae030a63c3fbc'
+  # config.secret_key = ''
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -240,8 +240,8 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
   require 'omniauth-clover'
-  config.omniauth :clover, ENV['clover_app_id'], ENV['clover_secret']
-  
+  config.omniauth :clover, ENV['CLOVER_APP_ID'], ENV['CLOVER_SECRET']
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

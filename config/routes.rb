@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   devise_scope :user do
       get 'sign_out', :to => 'devise/sessions#destroy'
   end
+
+  resources :tablets
 end

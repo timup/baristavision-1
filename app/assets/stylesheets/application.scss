@@ -3,8 +3,25 @@
 @import "normalize-rails";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 // @import "bourbon";
 // @import "base/grid-settings";
 // @import "neat";
 // @import "base/base";
 // @import "refills/flashes";
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.page-header {
+  margin: 0;
+  text-align: center;
+  h1 {
+    margin-top: 0;
+  }
+  h2 {
+    color: #bbb;
+    font-size: 22px;
+  }
+}

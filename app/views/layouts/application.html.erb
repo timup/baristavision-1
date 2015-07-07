@@ -8,9 +8,14 @@
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= body_class %>">
-  <%= render "flashes" -%>
-  <%= yield %>
+<body>
+  <header class="header">
+    <%= render "navbar" %>
+  </header>
+  <div class="container">
+    <%= render "flashes" %>
+    <%= yield %>
+  </div>
   <%= render "javascript" %>
 </body>
 </html>

@@ -3,6 +3,7 @@ class CreateTablets < ActiveRecord::Migration
     create_table :tablets do |t|
       t.string :name
       t.string :merchant_id
+      t.string :items, array: true, default: []
       t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false

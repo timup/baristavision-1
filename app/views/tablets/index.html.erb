@@ -1,4 +1,30 @@
+<div class="page-header">
+  <h1>
+    All Tablets
+    <div class="pull-right">
+      <%= link_to new_tablet_path, class: "btn btn-lg btn-success" do %>
+        <i class="fa fa-plus"></i>
+        New Tablet
+      <% end %>
+    </div>
+  </h1>
+</div>
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <% @tablets.each do |tablet| %>
+    <li>
+      <%= link_to tablet_path(tablet) do %>
+        <div class="">
+          <%= tablet.name %>
+        </div>
+      <% end %>
+    </li>
+  <% end %>
+</div>
+
+
+
+
 
 <h1>Listing Tablets</h1>
 
@@ -7,6 +33,7 @@
     <tr>
       <th>Name</th>
       <th>Merchant</th>
+      <th>Items</th>
       <th>User</th>
       <th colspan="3"></th>
     </tr>
@@ -17,6 +44,7 @@
       <tr>
         <td><%= tablet.name %></td>
         <td><%= tablet.merchant_id %></td>
+        <td><%= tablet.items %></td>
         <td><%= tablet.user %></td>
         <td><%= link_to 'Show', tablet %></td>
         <td><%= link_to 'Edit', edit_tablet_path(tablet) %></td>

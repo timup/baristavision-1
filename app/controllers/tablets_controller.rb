@@ -1,5 +1,6 @@
 class TabletsController < ApplicationController
   before_action :set_tablet, only: [:show, :edit, :update, :destroy]
+  before_action :set_clover, only: [:new, :create, :edit, :update]
 
   # GET /tablets
   def index
@@ -21,7 +22,8 @@ class TabletsController < ApplicationController
 
   # POST /tablets
   def create
-    @tablet = Tablet.new(tablet_params)
+    @tablet = current_user.tablets.new(tablet_params)
+    @tablet.merchant_id = current_user.merchant_id
 
     if @tablet.save
       redirect_to @tablet, notice: 'Tablet was successfully created.'
@@ -51,8 +53,12 @@ class TabletsController < ApplicationController
       @tablet = Tablet.find(params[:id])
     end
 
+    def set_clover
+      @clover = Clover.new("#{current_user.access_token}", "#{current_user.merchant_id}")
+    end
+
     # Only allow a trusted parameter "white list" through.
     def tablet_params
-      params.require(:tablet).permit(:name, :merchant_id, :user_id)
+      params.require(:tablet).permit(:name, :merchant_id, :user_id, items: [])
     end
 end

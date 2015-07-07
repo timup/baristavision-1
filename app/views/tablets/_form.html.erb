@@ -1,10 +1,12 @@
-<%= simple_form_for(@tablet) do |f| %>
+<%= simple_form_for(@tablet,html: {class: 'form-horizontal'}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :merchant_id %>
-    <%= f.association :user %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :items, :collection => @clover.items['elements'].map { |item| item['name'] }, :as => :check_boxes, :include_hidden => false %>
   </div>
 
   <div class="form-actions">
